@@ -1,12 +1,21 @@
+// src/index.tsx
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux' // Importar Provider do Redux
+import { store } from './store' // Importar o store configurado
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      {' '}
+      {/* Envolver o App com o Provider */}
+      <App />
+    </Provider>
   </React.StrictMode>
 )
 
